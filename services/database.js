@@ -28,6 +28,30 @@ async function getTweets() {
 	return result.rows;
 }
 
+async function getTweetsByUserName(username) {
+	const result = await database.query(
+		`
+    SELECT
+    tweets.id,
+    tweets.message,
+    tweets.created_at,
+    users.username,
+    users.name
+   FROM
+    Tweets
+   JOIN users ON
+    tweets.user_id = users.id
+    WHERE
+        users.username = $1
+   ORDER BY created_at DESC;
+   `,
+		[username]
+	);
+
+	return result.rows;
+}
+
 module.exports = {
 	getTweets,
+	getTweetsByUserName,
 };
