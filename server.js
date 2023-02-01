@@ -1,13 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const {
-	getTweets,
-	getTweetsByUsername,
-	createTweet,
-} = require('./services/database');
+const { getTweets, getTweetsByUsername, createTweet } = require('./services/database');
 
-const PORT = 3000;
+const PORT = 4000;
 
 app.use(cors());
 app.use(express.json());

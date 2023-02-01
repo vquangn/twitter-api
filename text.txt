@@ -3,21 +3,3 @@ npm install express
 npm i pg
 npm i cors
 
-
-
-
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const port = 3000;
-
-app.use(cors());
-app.use(express.json());
-
-app.get('/', (request, response) => {
-	response.send('Hello from Twitter');
-});
-
-app.listen(port, () => {
-	console.log(`Twitter API listen to ${port}.`);
-});
