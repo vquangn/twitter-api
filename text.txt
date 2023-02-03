@@ -3,3 +3,18 @@ npm install express
 npm i pg
 npm i cors
 
+Deply Backend og Database
+oppdatere GitHub repo med siste kode - push
+opprette ny render webservice i Render - deploy
+opprette ny Postgres database i Render
+oppdatere Server.js med connectionString se - https://node-postgres.com/ 
+knytte Potgres APP med databasen i Render  - register - server 
+knytte webservice i Render med Postgres database i Render - Environment Variables
+
+Deploy Frontend
+oppdatere GitHub repo med siste kode - push
+opprette ny render new staticsite 
+
+Redirect and Rewrite Rules
+
+Environment Variables

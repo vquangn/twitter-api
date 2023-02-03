@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
