@@ -3,8 +3,8 @@ const {Pool} = require('pg');
 const database = new Pool({
 	user: 'postgres',
 	host: 'localhost',
-	database: 'Twitter',
-	password: 'Utvikling2022',
+	database: 'twitter',
+	password: '',
 	port: 5432,
 });
 
@@ -54,7 +54,7 @@ async function createTweet(username, text) {
 		`
     SELECT
       users.id
-      FROM 
+    FROM 
       users
     WHERE
       users.username = $1
@@ -69,7 +69,7 @@ async function createTweet(username, text) {
       (message, user_id)
     VALUES
       ($1, $2)
-   RETURNING
+    RETURNING
       id
   `,
 		[text, user.id]
@@ -78,8 +78,24 @@ async function createTweet(username, text) {
 	return newTweet;
 }
 
+async function getUserByUsername(username) {
+	const result = await database.query(
+		`
+    SELECT
+      *
+    FROM
+      users 
+    WHERE
+      username = $1
+  `,
+		[username]
+	);
+	return result.rows[0];
+}
+
 module.exports = {
 	getTweets,
 	getTweetsByUsername,
 	createTweet,
+	getUserByUsername,
 };
