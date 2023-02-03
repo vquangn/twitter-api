@@ -2,9 +2,10 @@ const {Pool} = require('pg');
 
 const POSTGRES_URL =
 	process.env.POSTGRES_URL ||
-	'postgresql://:Utvikling2022@localhost:3333/twitterdb_nf24';
+	'postgresql://twitterdb_nf24_user:WYGVFFROb4M0tS6muLsOzohSf9qo0euE@dpg-cfedjr4gqg46rpnkbp70-a:5432/twitterdb_nf24';
 
-//'postgresql://twitterdb_nf24_user:WYGVFFROb4M0tS6muLsOzohSf9qo0euE@dpg-cfedjr4gqg46rpnkbp70-a:5432/twitterdb_nf24'
+//'postgresql://:Utvikling2022@localhost:3333/twitterdb_nf24'
+
 // const database = new Pool({
 // 	user: 'postgres',
 // 	host: 'localhost',
