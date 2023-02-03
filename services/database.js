@@ -1,11 +1,18 @@
 const {Pool} = require('pg');
 
+const POSTGRES_URL =
+	'postgresql://twitterdb_nf24_user:WYGVFFROb4M0tS6muLsOzohSf9qo0euE@dpg-cfedjr4gqg46rpnkbp70-a:5432/twitterdb_nf24';
+
+// const database = new Pool({
+// 	user: 'postgres',
+// 	host: 'localhost',
+// 	database: 'twitter',
+// 	password: '',
+// 	port: 5432,
+// });
+
 const database = new Pool({
-	user: 'postgres',
-	host: 'localhost',
-	database: 'twitter',
-	password: '',
-	port: 5432,
+	connectionString: POSTGRES_URL,
 });
 
 async function getTweets() {
